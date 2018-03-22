@@ -1,5 +1,7 @@
 # now-travis
 
+> Fork from [eliperelman/now-travis](https://github.com/eliperelman/now-travis) adapted to pass CLI arguments to Now CLI in child process.
+
 Automatically deploy to ∆ Now from Travis pushes. Setting up now-travis can:
 
 - Automatically create staging deployments for pull requests

@@ -7,6 +7,7 @@ const urlRegex = require('url-regex');
 const fs = require('fs');
 const nowCli = require.resolve('now/bin/now');
 
+const mainArgs = process.argv.slice(2);
 const argv = require('yargs').argv;
 // should the URL be written to a file?
 const writeURL = argv.file; // this will be the filename
@@ -46,7 +47,8 @@ function deploy(context, sha) {
 
   const args = [
     '--token', nowToken,
-    '--no-clipboard'
+    '--no-clipboard',
+    ...mainArgs
   ];
   const alias = context === 'production' && process.env.NOW_ALIAS;
   let stdout = '';
